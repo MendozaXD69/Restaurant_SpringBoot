@@ -15,7 +15,10 @@
 
 		<h1>Lista de Productos</h1>
 
-		<a th:href="@{/producto/create}" class="btn btn-primary">Nuevo Producto</a>
+		Bienvenido <span sec:authentication="principal.username"></span> <br>
+
+		<a th:href="@{/producto/create}" class="btn btn-primary">Nuevo
+			Producto</a>
 
 		<table class="table">
 			<thead>
@@ -34,8 +37,10 @@
 					<td scope="row" th:text="${producto.nombre}"></td>
 					<td scope="row" th:text="${producto.descripcion}"></td>
 					<td scope="row" th:text="${producto.precio}"></td>
-					<td><a th:href="@{/producto/edit/{id} (id=${producto.id}) }" class="btn btn-warning">Editar</a></td>
-					<td><a th:href="@{/producto/delete/{id} (id=${producto.id}) }" class="btn btn-danger">Eliminar</a></td>
+					<td><a th:href="@{/producto/edit/{id} (id=${producto.id}) }"
+						class="btn btn-warning">Editar</a></td>
+					<td><a th:href="@{/producto/delete/{id} (id=${producto.id}) }"
+						class="btn btn-danger">Eliminar</a></td>
 				</tr>
 			</tbody>
 		</table>
