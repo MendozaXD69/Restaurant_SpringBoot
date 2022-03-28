@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.RestauranteSpring.model.Producto;
+import com.RestauranteSpring.repository.OrdenRepository;
 import com.RestauranteSpring.repository.ProductoRepository;
 
 @Controller
@@ -23,11 +24,9 @@ public class ProductoController {
 	private ProductoRepository productoRepository;
 	
 	@GetMapping("")
-	public String home(Model model){
-		
+	public String home(Model model) {
 		model.addAttribute("producto", productoRepository.findAll());
 		return "home";
-		
 	}
 	
 	@GetMapping("/create") // http:localhost:8080/producto/create
@@ -68,4 +67,18 @@ public class ProductoController {
 		
 	}
 	
+	@GetMapping("/create_order")
+	public String create_order() {
+		
+		return "create_order";
+		
+	}
+	
+	@GetMapping("/ver_orden")
+	public String ver_orden() {
+		
+		return "ver_orden";
+		
+	}
+		
 }

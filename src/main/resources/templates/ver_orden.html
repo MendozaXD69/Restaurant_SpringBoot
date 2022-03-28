@@ -10,12 +10,11 @@
 	crossorigin="anonymous">
 </head>
 <body>
-
 	<div class="container">
 
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="">Lista de Productos</a>
+				<a class="navbar-brand" href="">Lista de Ordenes</a>
 				<button class="navbar-toggler" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
 					aria-controls="navbarNavAltMarkup" aria-expanded="false"
@@ -23,28 +22,22 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-					<div class="navbar-nav">
-						<li sec:authorize="isAuthenticated()"><a
-							class="nav-link active" aria-current="page" th:href="@{/logout}">Logout</a>
-					</div>
+					<div class="navbar-nav"></div>
 				</div>
-			</div>
 		</nav>
 
-		<br> Bienvenido <span sec:authentication="principal.username"></span>
-		<br> <a th:href="@{/producto/create}" class="btn btn-primary">Nuevo
-			Producto</a> <a th:href="@{/producto/create_order}"
+		<br> <a th:href="@{/producto/create_order}"
 			class="btn btn-primary">Nueva Orden</a> <a
-			th:href="@{/producto/ver_orden}" class="btn btn-primary">Ver Ordenes</a>
-
+			th:href="@{/producto}" class="btn btn-primary">Menú
+			Principal</a>
 		<table class="table">
 			<thead>
 				<tr>
 					<th scope="col">Id</th>
 					<th scope="col">Nombre</th>
-					<th scope="col">Descripción</th>
-					<th scope="col">Precio</th>
-					<th scope="col">Acción</th>
+					<th scope="col">Producto</th>
+					<th scope="col">Cantidad</th>
+					<th scope="col">Total</th>
 					<th scope="col">Acción</th>
 				</tr>
 			</thead>
